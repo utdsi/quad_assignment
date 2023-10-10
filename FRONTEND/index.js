@@ -60,6 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fetch and display users when the page loads
+    // Fetch 
     fetchUsers();
 });
