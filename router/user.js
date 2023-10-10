@@ -4,6 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+require('dotenv').config()
 
 const User = require('../model/user');
 
@@ -26,7 +27,7 @@ router.post('/', async (req, res) => {
         },
       };
 
-      jwt.sign(payload, config.jwtSecret, { expiresIn: 3600 }, (err, token) => {
+      jwt.sign(payload, process.env.secret, { expiresIn: 3600 }, (err, token) => {
         if (err) throw err;
         res.json({ token });
       });
